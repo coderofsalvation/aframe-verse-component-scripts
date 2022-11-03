@@ -16,7 +16,7 @@ Allow certain urls in [aframe-verse.json](https://github.com/coderofsalvation/af
 }
 ```
 
-Then add the `scripts` attribute to your cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html)):
+Just add the `scripts` attribute to your cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html)):
 
 ```
 <a-entity aframe-verse="......" scripts>
