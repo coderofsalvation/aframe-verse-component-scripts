@@ -40,7 +40,7 @@ Then `game.html` or `app3.html` will have to include their scripts inside the `a
 
 > Profit! Now `foo.js` and `bar.js` will be loaded, but not `.....`
 
-This way scripts are cherrypicked, so you don't have to worry about accidentally loading global scripts too (2 versions of `aframe.min.js` e.g.). Global are only be loaded in the cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html) e.g.)
+This way scripts are cherrypicked, so you don't have to worry about accidentally loading global scripts too (2 versions of `aframe.min.js` e.g.).
 
 ## Conditional loading
 
