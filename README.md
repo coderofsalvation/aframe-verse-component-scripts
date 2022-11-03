@@ -1,3 +1,5 @@
+![](https://github.com/coderofsalvation/aframe-verse/raw/main/.img/demo.gif)
+
 An extension for the [aframe-verse component](https://github.com/coderofsalvation/aframe-verse) which allows specific aframe experiences to load scripts.
 
 # Usage 
