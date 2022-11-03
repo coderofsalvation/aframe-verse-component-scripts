@@ -52,6 +52,22 @@ For aframe-verse-only scripts, you don't have to use `<script>`-tags, but you ca
 
 > Profit! now the script will only get loaded when viewed thru a cluster-client, and not in standalone mode.
 
+In case your app relies on DOMready-event, you'd want to add an `aframe-verse.js`-stub, to kick off your app:
+
+```html
+<template class="aframe-verse-script" src="aframe-verse.js"/> 
+```
+
+aframe-verse.js
+```js
+$('[aframe-verse]').addEventListener("loaded", () => {            
+  myapp = new App()                                                 
+  myapp.init()
+})
+```
+
+> Profit!
+
 ## Scope of this component
 
 Further privacy/Security-stuff is out of scope (see the `navigate` custom-component example in the [aframe-verse README.md](https://github.com/coderofsalvation/aframe-verse) in the `Customizing (with code) > Customizing navigation further` section.
