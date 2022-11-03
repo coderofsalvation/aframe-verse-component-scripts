@@ -16,6 +16,9 @@ Allow certain urls in [aframe-verse.json](https://github.com/coderofsalvation/af
 }
 ```
 
+> Advice: don't trust things you should'nt trust :heart:
+
+
 Just add the `scripts` attribute to your cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html)):
 
 ```
@@ -37,14 +40,18 @@ Then `game.html` or `app3.html` will have to include their scripts inside the `a
 
 > Profit! Now `foo.js` and `bar.js` will be loaded, but not `.....`
 
-This way scripts are cherrypicked, so you don't have to worry about accidentally loading global scripts (2 versions of `aframe.min.js` e.g.). Global scripts should only be loaded in the cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html) e.g.)
+This way scripts are cherrypicked, so you don't have to worry about accidentally loading global scripts too (2 versions of `aframe.min.js` e.g.). Global are only be loaded in the cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html) e.g.)
 
-## Conditional loading 
+## Conditional loading
 
-For aframe-verse-only  scripts, you don't have to use `<script>`-tags, but you can use the `aframe-verse-script`-classname in your `game.html` or `app3.html`:
+For aframe-verse-only scripts, you don't have to use `<script>`-tags, but you can use the `aframe-verse-script`-classname in your `game.html` or `app3.html`:
 
 ```html
 <template class="aframe-verse-script" src="component/x.js"/> 
 ```
 
 > Profit! now the script will only get loaded when viewed thru a cluster-client, and not in standalone mode.
+
+## Scope of this component
+
+Security-stuff is out of scope (see the `navigate` custom-component example in the [aframe-verse README.md](https://github.com/coderofsalvation/aframe-verse) in the `Customizing (with code) > Customizing navigation further` section.
