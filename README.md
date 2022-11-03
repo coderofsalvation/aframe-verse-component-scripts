@@ -50,9 +50,9 @@ For aframe-verse-only scripts, you don't have to use `<script>`-tags, but you ca
 <template class="aframe-verse-script" src="component/x.js"/> 
 ```
 
-> Profit! now the script will only get loaded when viewed thru a cluster-client, and not in standalone mode.
+> Profit! now the component will only get loaded when viewed thru **aframe-verse**, and not in standalone mode.
 
-In case your app relies on DOMready-event, you'd want to add an `aframe-verse.js`-stub, to kick off your app:
+Still, in some cases, you'd want to add an `aframe-verse.js`-stub, to kick off your app:
 
 ```html
 <template class="aframe-verse-script" src="aframe-verse.js"/> 
@@ -60,9 +60,10 @@ In case your app relies on DOMready-event, you'd want to add an `aframe-verse.js
 
 aframe-verse.js
 ```js
+// our 'domready' event
 $('[aframe-verse]').addEventListener("loaded", () => {            
-  myapp = new App()                                                 
-  myapp.init()
+  myexperience = new Experience()                                                 
+  myexperience.init()
 })
 ```
 
