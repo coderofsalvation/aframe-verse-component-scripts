@@ -12,6 +12,5 @@ AFRAME.registerComponent('scripts', {
       this.el.appendChild(s)
     })
     promise.resolve()
-    //promise.reject("not going to happen")
   }
 })
