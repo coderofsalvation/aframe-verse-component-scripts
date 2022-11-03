@@ -2,7 +2,7 @@ An extension for the [aframe-verse component](https://github.com/coderofsalvatio
 
 # Usage 
 
-Allow certain urls in [aframe-verse.json](aframe-version) to load scripts by adding `scripts:true`:
+Allow certain urls in [aframe-verse.json](https://github.com/coderofsalvation/aframe-verse/aframe-verse.json) to load scripts by adding `scripts:true`:
 
 ```json
 {
