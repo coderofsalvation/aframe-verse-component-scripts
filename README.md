@@ -54,4 +54,7 @@ For aframe-verse-only scripts, you don't have to use `<script>`-tags, but you ca
 
 ## Scope of this component
 
-Security-stuff is out of scope (see the `navigate` custom-component example in the [aframe-verse README.md](https://github.com/coderofsalvation/aframe-verse) in the `Customizing (with code) > Customizing navigation further` section.
+Further privacy/Security-stuff is out of scope (see the `navigate` custom-component example in the [aframe-verse README.md](https://github.com/coderofsalvation/aframe-verse) in the `Customizing (with code) > Customizing navigation further` section.
+
+> Please publish any useful components under reponame `aframe-verse-component-mycomponent` for discoverability.
+
