@@ -62,8 +62,13 @@ aframe-verse.js
 ```js
 // our 'domready' event
 $('[aframe-verse]').addEventListener("loaded", () => {            
+
+  let promise = e.detail.promise()  // dont fadein experience yet
+
   myexperience = new Experience()                                                 
-  myexperience.init()
+  myexperience.start()
+
+  promise.resolve()                 // now we can fadein 
 })
 ```
 

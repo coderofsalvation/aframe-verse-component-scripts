@@ -13,8 +13,9 @@ AFRAME.registerComponent('scripts', {
   loadScripts: function(e){
     if( !e.detail.destination.scripts ) return // not allowed in aframe-verse.json
     let promise = e.detail.promise()
-    let scripts = [...e.detail.dom.querySelectorAll("[aframe-verse] script"), 
-                   ...e.detail.dom.querySelectorAll(".aframe-verse-script")   ]
+		let dom     = e.detail.destination.dom
+    let scripts = [...dom.querySelectorAll("[aframe-verse] script"), 
+                   ...dom.querySelectorAll(".aframe-verse-script")   ]
 		var promises = []
 		scripts.map( (script) => promises.push( this.require(script.getAttribute('src') ) ) )
 		if( promises.length ) 
