@@ -25,30 +25,26 @@ Then add the `scripts` attribute to your cluster-client ([index.html](https://gi
 Then `game.html` or `app3.html` will have to include their scripts inside the `aframe-verse`-block:
 
 ```html
-<a-entity aframe-verse="......">
+<script src="....."></script>                          <!-- will not be loaded
 
-   <script src="./component/special.js"/>
+<a-entity aframe-verse="______">
+
+   <script src="./component/foo.js"/>            <!-- will be loaded (inside aframe-verse block)
+   <script src="./component/bar.js"/>            <!-- 
 
 </a-entity>
 ```
 
-## Customizing 
+> Profit! Now `foo.js` and `bar.js` will be loaded, but not `.....`
 
-If for some reason the above is not feasible, you can make something like this work too:
+This way scripts are cherrypicked, so you don't have to worry about accidentally loading global scripts (2 versions of `aframe.min.js` e.g.). Global scripts should only be loaded in the cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html) e.g.)
 
+## Conditional loading 
+
+For aframe-verse-only  scripts, you don't have to use `<script>`-tags, but you can use the `aframe-verse-script`-classname in your `game.html` or `app3.html`:
 
 ```html
-<template>
-  <foo bar="./component/special.js"/>
-</template>
-
-<a-entity aframe-verse="......">
-
-</a-entity>
+<template class="aframe-verse-script" src="component/x.js"/> 
 ```
 
-But then you need to add the `scripts` attribute to your cluster-client ([index.html](https://github.com/coderofsalvation/aframe-verse/blob/main/apps/index.html)) like this:
-
-```
-<a-entity aframe-verse="......" scripts="cssquery: template>foo; attr: bar">
-```
+> Profit! now the script will only get loaded when viewed thru a cluster-client, and not in standalone mode.
