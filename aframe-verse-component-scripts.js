@@ -5,10 +5,12 @@ AFRAME.registerComponent('scripts', {
   loadScripts: function(e){
     if( !e.detail.destination.scripts ) return // not allowed in aframe-verse.json
     let promise = e.detail.promise()
-    let scripts = [...e.detail.dom.querySelectorAll("[aframe-verse] script")]
+    let query = this.data.cssquery || "[aframe-verse script]"
+    let attr  = this.data.attr  || "src"
+    let scripts = [...e.detail.dom.querySelectorAll(query)]
     scripts.map( (script) => {
       let s = document.createElement("script")
-      s.setAttribute("src", script.getAttribute("src") )
+      s.setAttribute("src", script.getAttribute(attr) )
       this.el.appendChild(s)
     })
     promise.resolve()
