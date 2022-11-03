@@ -25,7 +25,7 @@ Just add the `scripts` attribute to your cluster-client ([index.html](https://gi
 Then `game.html` or `app3.html` will have to include their scripts inside the `aframe-verse`-block:
 
 ```html
-<script src="....."></script>                          <!-- will not be loaded
+<script src="....."></script>                     <!-- will not be loaded
 
 <a-entity aframe-verse="______">
 
