@@ -1,7 +1,7 @@
 AFRAME.registerComponent = function(original){
   return function(tag,opts){
     if( AFRAME.components[tag] ) 
-			return console.warn(`skipping AFRAME.registerComponent('${c}') already registered`) 
+			return console.warn(`skipping AFRAME.registerComponent('${tag}') already registered`) 
    	else return original.apply(AFRAME,arguments)
   }
 }(AFRAME.registerComponent)
