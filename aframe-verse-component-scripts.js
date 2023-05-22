@@ -1,3 +1,5 @@
+> LATEST NEWS: for an AFRAME & file-format-agnostic version see [the XR Fragments standard instead](https://coderofsalvation.github.io/xrfragment/#XR%20Fragments)
+
 AFRAME.registerComponent = function(original){
   return function(tag,opts){
     if( AFRAME.components[tag] ) 
